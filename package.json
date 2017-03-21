@@ -1,0 +1,26 @@
+{
+  "name": "conscious-climber",
+  "version": "1.0.0",
+  "description": "Website for the Conscious Climber",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desforets/conscious-climber.git"
+  },
+  "keywords": [
+    "consciouc",
+    "climber",
+    "website",
+    "video",
+    "content"
+  ],
+  "author": "Desfores",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desforets/conscious-climber/issues"
+  },
+  "homepage": "https://github.com/desforets/conscious-climber#readme"
+}
