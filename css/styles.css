@@ -1,4 +1,4 @@
-video#landingVideo {
+#landingVideo {
   max-height: 80vh;
   border-radius: 2px;
 }
@@ -7,4 +7,8 @@ video#landingVideo {
   .title.mission span {
     display: block;
   }
+}
+
+body {
+  background-color: whitesmoke;
 }
