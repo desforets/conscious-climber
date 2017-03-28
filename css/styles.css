@@ -1,0 +1,10 @@
+video#landingVideo {
+  max-height: 80vh;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 900px) {
+  .title.mission span {
+    display: block;
+  }
+}
