@@ -1,14 +1,11 @@
-#landingVideo {
-  max-height: 80vh;
-  border-radius: 2px;
-}
+#landingVideo { max-height: 80vh; border-radius: 2px; }
 
 @media screen and (max-width: 900px) {
-  .title.mission span {
-    display: block;
-  }
+  .title.mission span { display: block; }
 }
 
-body {
-  background-color: whitesmoke;
-}
+body { background-color: whitesmoke; }
+
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
+.embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.tile { padding: 0 !important; line-height: 0; }
