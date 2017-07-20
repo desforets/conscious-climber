@@ -333,13 +333,13 @@ body.is-loading #main {
     font-family: 'Source Sans Pro';
     letter-spacing: 0.225rem;
     padding-left: calc(0.225rem + 1.125rem);
-    font-weight: 400;
+    font-weight: 600;
     border-radius: 1.625rem;
 }
 #buttons01 .n01 {
     color: white;
     /*color: #474747;*/
-    border: solid 1px #D6DFE4;
+    border: solid 0.2em #D6DFE4;
 }
 #buttons01 .n01:hover {
     color: #309EDB;
@@ -348,7 +348,7 @@ body.is-loading #main {
 #buttons01 .n02 {
     color: white;
     /*color: #474747;*/
-    border: solid 1px #D6DFE4;
+    border: solid 0.2em #D6DFE4;
 }
 #buttons01 .n02:hover {
     color: #309EDB;
@@ -357,7 +357,7 @@ body.is-loading #main {
 #buttons01 .n03 {
     color: white;
     /*color: #474747;*/
-    border: solid 1px #D6DFE4;
+    border: solid 0.2em #D6DFE4;
 }
 #buttons01 .n03:hover {
     color: #309EDB;
@@ -483,7 +483,7 @@ p .li {
 #text07 {
     letter-spacing: 0.025rem;
     width: calc(100% + 0.025rem);
-    font-weight: 200;
+    font-weight: 400;
     text-transform: none;
 }
 #text02 {
@@ -511,6 +511,10 @@ p {
     font-size: 1em;
     line-height: 1.875;
     font-weight: 400;
+}
+section p, section p span {
+  text-shadow: 1px 1px 1px grey;
+  font-weight: 400;
 }
 .icons {
     cursor: default;
