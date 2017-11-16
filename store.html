@@ -10,8 +10,34 @@
     <link rel="icon" type="image/png" href="./img/logos/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./img/logos/favicon-16x16.png" sizes="16x16" />
     <script src="./js/smooth-scroll.js"></script>
+    <meta property="fb:app_id"                content="1039689392870924" />
+    <meta property="og:url"                content="http://theconsciousclimber.com/store" />
+    <meta property="og:type"               content="product.item" />
+    <meta property="og:title"              content="Meet the Spirit+" />
+    <meta property="og:description"        content="A PowerWord branded sport climbing quick draw from The Conscious Climner" />
+    <meta property="og:image"              content="http://consciousclimber.com/img/products/spirit-breathe.png" />
+    <meta property="og:image:width"        content="1280" />
+    <meta property="og:image:height"       content="960" />
   </head>
   <body class="is-bold">
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '1039689392870924',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.11'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <section class="hero feature is-light">
       <!-- NAV SECTION -->
       <div class="hero-head">
@@ -42,7 +68,6 @@
             </div>
             <a href="https://www.youtube.com/watch?v=WLso1nhpK9M&list=UUNYYwW4JMe11yrzFY0UgV2g" class="nav-item" alt="Link to social profile on YouTube"><i class="fa fa-youtube-play " aria-hidden="true"></i></a>
             <a href="https://www.instagram.com/theconsciousclimber" class="nav-item" alt="Link to social profile on Instagram"><i class="fa fa-instagram " aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/groups/consciousclimbersquamish" class="nav-item" alt="Link to social profile on Facebook"><i class="fa fa-facebook " aria-hidden="true"></i></a>
           </div>
         </header>
       </div>
@@ -66,7 +91,7 @@
                     Power Word branded Sport Climbing quick-draw
                     <br><br>
                     <a id="order" data-style="Focus" class="button is-primary is-outlined orderButton">Order</a>
-                    <a class="button is-secondary is-outlined">Share</a>
+                    <a class="button is-secondary is-outlined shareButton">Share</a>
                     <br>
                   </div>
                 </div>
@@ -88,7 +113,7 @@
                     Power Word branded Sport Climbing quick-draw
                     <br><br>
                     <a id="order" data-style="Breathe" class="button is-primary is-outlined orderButton">Order</a>
-                    <a class="button is-secondary is-outlined">Share</a>
+                    <button class="button is-secondary is-outlined shareButton">Share</a>
                     <br>
                   </div>
                 </div>
@@ -105,26 +130,6 @@
             <p>So excited you're excited about this product</p>
             <h6>Select your styles and quantity and you'll be redirected to PayPal to complete your purchase</h6>
             <br>
-            <!-- <div class="field is-horizontal">
-              <div class="field-body">
-                <div class="field">
-                  <p class="control">
-                    <input class="input" type="text" placeholder="Name">
-                  </p>
-                </div>
-                <div class="field">
-                  <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Email "value="">
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="field">
-              <label class="label">Mailing Address</label>
-              <div class="control">
-                <textarea class="textarea" placeholder=""></textarea>
-              </div>
-            </div> -->
               <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="RTXKT4JQCSVEA">
@@ -171,6 +176,43 @@
             </div>
           </div>
         </div>
+
+        <div class="modal" id="modal-share">
+          <div class="modal-background shareModalClose"></div>
+          <div class="modal-content">
+            <div class="box" style="position: relative;">
+              <aside class="menu">
+                <ul class="menu-list">
+                  <li>
+                    <a href="" id="fbShare" alt="Share link for Facebook">
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                      <span style="margin-left: 5px">Show all your friends</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-pin-do="buttonPin" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftheconsciousclimber.com%2Fstore&media=http%3A%2F%2Ftheconsciousclimber.com%2Fimg%2Fproducts%2Fspirit-breathe.png&description=Spirit%2B%20PowerWord%20branded%20sport%20climbing%20quick%20draw%20" alt="Share link for Pinterest">
+                      <i class="fa fa-pinterest" aria-hidden="true"></i>
+                      <span style="margin-left: 5px">Pin this!</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="http://twitter.com/home?status=Whoa!%20Check%20out%20the%20Spirit%2B%20from%20theconsciousclimber.com/store%20%23consciousclimbing" alt="Share the Spirit+ on Twitter">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <span style="margin-left: 5px">"The Spirit+ is in the building"</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./img/products/spirit-breathe.png" download="spirit-breathe.png" alt="Download image to share on Instagram">
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <span style="margin-left: 5px">Download image</span>
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+              <button style="position: absolute; background-color: lightgrey" class="modal-close is-large shareModalClose" aria-label="close"></button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <script type="text/javascript">
@@ -185,6 +227,25 @@
       orderButtons.forEach(b => { b.addEventListener('click', toggleModal) })
       let closeModal = document.querySelectorAll('.modalClose')
       closeModal.forEach(c => { c.addEventListener('click', toggleModal) })
+
+      function toggleShareModal (event) {
+        var shareModal = document.getElementById('modal-share')
+        shareModal.classList.toggle('is-active')
+      }
+      let shareButtons = document.querySelectorAll('.shareButton')
+      shareButtons.forEach(b => { b.addEventListener('click', toggleShareModal) })
+      let closeShareModal = document.querySelectorAll('.shareModalClose')
+      closeShareModal.forEach(c => { c.addEventListener('click', toggleShareModal) })
     </script>
+    <script>
+      document.getElementById('fbShare').onclick = function() {
+        FB.ui({
+          method: 'share',
+          display: 'popup',
+          href: 'http://theconsciousclimber.com/store',
+        }, function(response){});
+      }
+      </script>
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
   </body>
 </html>
