@@ -90,7 +90,7 @@
                     <hr>
                     Power Word branded Sport Climbing Petzl Djinn quick-draw
                     <br><br>
-                    <a id="order" data-style="Focus" class="button is-primary is-outlined orderButton">Order</a>
+                    <a data-style="Focus" data-draw="DJINN" class="button is-primary is-outlined orderButton">Order</a>
                     <a class="button is-secondary is-outlined shareButton">Share</a>
                     <br>
                   </div>
@@ -112,7 +112,7 @@
                     <hr>
                     Power Word branded Sport Climbing Petzl Djinn quick-draw
                     <br><br>
-                    <a id="order" data-style="Breathe" class="button is-primary is-outlined orderButton">Order</a>
+                    <a data-style="Breathe" data-draw="DJINN" class="button is-primary is-outlined orderButton">Order</a>
                     <a class="button is-secondary is-outlined shareButton">Share</a>
                     <br>
                   </div>
@@ -136,7 +136,7 @@
                     <hr>
                     Power Word branded Sport Climbing Petzl Djinn quick-draw
                     <br><br>
-                    <a id="order" data-style="Focus" class="button is-primary is-outlined orderButton">Order</a>
+                    <a id="order" data-draw="BD" data-style="Focus" class="button is-primary is-outlined orderButton">Order</a>
                     <a class="button is-secondary is-outlined shareButton">Share</a>
                     <br>
                   </div>
@@ -158,7 +158,7 @@
                     <hr>
                     Power Word branded Sport Climbing Petzl Djinn quick-draw
                     <br><br>
-                    <a id="order" data-style="Breathe" class="button is-primary is-outlined orderButton">Order</a>
+                    <a id="order" data-draw="BD" data-style="Breathe" class="button is-primary is-outlined orderButton">Order</a>
                     <a class="button is-secondary is-outlined shareButton">Share</a>
                     <br>
                   </div>
@@ -168,8 +168,10 @@
           </div>
         </div> -->
       </div>
-      <div class="modal" id="modal">
-        <div class="modal-background modalClose"></div>
+
+      <!-- Modal for DJINN -->
+      <div class="modal" id="modalDJINN">
+        <div class="modal-background modalClose" data-draw="DJINN"></div>
         <div class="modal-content">
           <div class="box" style="position: relative;">
             <h4 class="title is-4">Awesome!</h4>
@@ -177,94 +179,172 @@
             <h6>Select your styles and quantity and you'll be redirected to PayPal to complete your purchase</h6>
             <p>Need a custom word!? Different draw? <a href="mailto:theconsciousclimber@gmail.com?subject=Whoa%20I%20want%20one!">Email us</a> and we'll make it happen: </p>
             <br>
+            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="RTXKT4JQCSVEA">
+                <div class="field is-horizontal">
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control">
+                        <input type="hidden" name="on1" value="Style">
+                        <label class="label">Style</label>
+                        <div class="select">
+                          <select id="selectStyle" class="selectStyle" name="os1">
+                            <option value="Breathe">Breathe </option>
+                          	<option value="Focus">Focus </option>
+                          	<option value="Breathe + Focus">Breathe + Focus </option>
+                          	<option value="Custom">Custom </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="control">
+                        <input type="hidden" name="on0" value="Quantity">
+                        <label class="label">Quantity</label>
+                        <div class="select">
+                          <select name="os0">
+                            <option value="1x">1x $30.00 CAD</option>
+                            <option value="2x">2x $55.00 CAD</option>
+                            <option value="4x">4x $100.00 CAD</option>
+                            <option value="8x">8x $190.00 CAD</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <input type="hidden" name="currency_code" value="CAD">
+                    <div class="field">
+                      <div style="margin-top: 2rem; margin-left: 2em;" class="control">
+                        <button type="submit" name="submit" class="button is-primary">Purchase</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field is-horizontal is-hidden customWord">
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control">
+                        <input type="hidden" name="on2" value="Custom word">
+                        <label class="label">Custom word</label>
+                        <input style="max-width: 50%;" type="text" class="input" name="os2" maxlength="200">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+            <button style="position: absolute; background-color: lightgrey" class="modal-close is-large modalClose" data-draw="DJINN" aria-label="close"></button>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="modalBD">
+        <div class="modal-background modalClose" data-draw="BD"></div>
+        <div class="modal-content">
+          <div class="box" style="position: relative;">
+            <h4 class="title is-4">Awesome!</h4>
+            <p>So excited you're excited about this product</p>
+            <h6>Select your styles and quantity and you'll be redirected to PayPal to complete your purchase</h6>
+            <p>Need a different draw? <a href="mailto:theconsciousclimber@gmail.com?subject=Whoa%20I%20want%20one!">Email us</a> and we'll make it happen: </p>
+            <br>
               <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="RTXKT4JQCSVEA">
-                  <div class="field is-horizontal">
-                    <div class="field-body">
+                <div class="field is-horizontal">
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control">
+                        <input type="hidden" name="on1" value="Style">
+                        <label class="label">Style</label>
+                        <div class="select">
+                          <select class="selectStyle" id="selectStyle" name="os1">
+                            <option value="Breathe">Breathe </option>
+                          	<option value="Focus">Focus </option>
+                          	<option value="Breathe + Focus">Breathe + Focus </option>
+                          	<option value="Custom">Custom </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
                       <div class="field">
                         <div class="control">
-                          <input type="hidden" name="on1" value="Style">
-                          <label class="label">Style</label>
+                          <input type="hidden" name="on0" value="Quantity">
+                          <label class="label">Quantity</label>
                           <div class="select">
-                            <select id="selectStyle" name="os1">
-                              <option value="Breathe">Breathe </option>
-                              <option value="Focus">Focus </option>
-                              <option value="Breathe + Focus">Breathe + Focus </option>
+                            <select name="os0">
+                              <option value="1x">1x $30.00 CAD</option>
+                              <option value="2x">2x $55.00 CAD</option>
+                              <option value="4x">4x $100.00 CAD</option>
+                              <option value="8x">8x $190.00 CAD</option>
                             </select>
                           </div>
                         </div>
                       </div>
-                      <div class="field">
-                          <div class="field">
-                            <div class="control">
-                              <input type="hidden" name="on0" value="Quantity">
-                              <label class="label">Quantity</label>
-                              <div class="select">
-                                <select name="os0">
-                                  <option value="1x">1x $40.00 CAD</option>
-                                  <option value="2x">2x $75.00 CAD</option>
-                                  <option value="4x">4x $140.00 CAD</option>
-                                  <option value="8x">8x $300.00 CAD</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <input type="hidden" name="currency_code" value="CAD">
-                        <div style="margin-top: 2rem; margin-left: 2em;" class="control">
-                          <button type="submit" name="submit" class="button is-primary">Purchase</button>
-                        </div>
+                    </div>
+                    <input type="hidden" name="currency_code" value="CAD">
+                    <div style="margin-top: 2rem; margin-left: 2em;" class="control">
+                      <button type="submit" name="submit" class="button is-primary">Purchase</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="field is-horizontal is-hidden customWord">
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control">
+                        <input type="hidden" name="on2" value="Custom word">
+                        <label class="label">Custom word</label>
+                        <input style="max-width: 50%;" type="text" class="input" name="os2" maxlength="200">
                       </div>
                     </div>
+                  </div>
+                </div>
                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
               </form>
-              <button style="position: absolute; background-color: lightgrey" class="modal-close is-large modalClose" aria-label="close"></button>
+              <button style="position: absolute; background-color: lightgrey" class="modal-close is-large modalClose" data-draw="BD" aria-label="close"></button>
             </div>
           </div>
         </div>
 
-        <div class="modal" id="modal-share">
-          <div class="modal-background shareModalClose"></div>
-          <div class="modal-content">
-            <div class="box" style="position: relative;">
-              <aside class="menu">
-                <ul class="menu-list">
-                  <li>
-                    <a href="" id="fbShare" alt="Share link for Facebook">
-                      <i class="fa fa-facebook" aria-hidden="true"></i>
-                      <span style="margin-left: 5px">Show all your friends</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-pin-do="buttonPin" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftheconsciousclimber.com%2Fstore&media=http%3A%2F%2Ftheconsciousclimber.com%2Fimg%2Fproducts%2Fspirit-breathe.png&description=Spirit%2B%20PowerWord%20branded%20sport%20climbing%20quick%20draw%20" alt="Share link for Pinterest">
-                      <i class="fa fa-pinterest" aria-hidden="true"></i>
-                      <span style="margin-left: 5px">Pin this!</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="http://twitter.com/home?status=Whoa!%20Check%20out%20the%20Spirit%2B%20from%20theconsciousclimber.com/store%20%23consciousclimbing%20http://pic.twitter.com/9oeDuvurlj" alt="Share the Spirit+ on Twitter">
-                      <i class="fa fa-twitter" aria-hidden="true"></i>
-                      <span style="margin-left: 5px">"The Spirit+ is in the building"</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="./img/products/spirit-breathe.png" download="spirit-breathe.png" alt="Download image to share on Instagram">
-                      <i class="fa fa-instagram" aria-hidden="true"></i>
-                      <span style="margin-left: 5px">Download image</span>
-                    </a>
-                  </li>
-                </ul>
-              </aside>
-              <button style="position: absolute; background-color: lightgrey" class="modal-close is-large shareModalClose" aria-label="close"></button>
-            </div>
+      <div class="modal" id="modal-share">
+        <div class="modal-background shareModalClose"></div>
+        <div class="modal-content">
+          <div class="box" style="position: relative;">
+            <aside class="menu">
+              <ul class="menu-list">
+                <li>
+                  <a href="" id="fbShare" alt="Share link for Facebook">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <span style="margin-left: 5px">Show all your friends</span>
+                  </a>
+                </li>
+                <li>
+                  <a data-pin-do="buttonPin" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftheconsciousclimber.com%2Fstore&media=http%3A%2F%2Ftheconsciousclimber.com%2Fimg%2Fproducts%2Fspirit-breathe.png&description=Spirit%2B%20PowerWord%20branded%20sport%20climbing%20quick%20draw%20" alt="Share link for Pinterest">
+                    <i class="fa fa-pinterest" aria-hidden="true"></i>
+                    <span style="margin-left: 5px">Pin this!</span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://twitter.com/home?status=Whoa!%20Check%20out%20the%20Spirit%2B%20from%20theconsciousclimber.com/store%20%23consciousclimbing%20http://pic.twitter.com/9oeDuvurlj" alt="Share the Spirit+ on Twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <span style="margin-left: 5px">"The Spirit+ is in the building"</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="./img/products/spirit-breathe.png" download="spirit-breathe.png" alt="Download image to share on Instagram">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <span style="margin-left: 5px">Download image</span>
+                  </a>
+                </li>
+              </ul>
+            </aside>
+            <button style="position: absolute; background-color: lightgrey" class="modal-close is-large shareModalClose" aria-label="close"></button>
           </div>
         </div>
       </div>
     </section>
     <script type="text/javascript">
       function toggleModal (event) {
-        var modal = document.getElementById('modal')
+        var modal = document.getElementById('modal' + event.target.dataset.draw)
         modal.classList.toggle('is-active')
         var styleList = document.getElementById('selectStyle')
         let targetStyle = event.target.dataset.style
@@ -274,6 +354,18 @@
       orderButtons.forEach(b => { b.addEventListener('click', toggleModal) })
       let closeModal = document.querySelectorAll('.modalClose')
       closeModal.forEach(c => { c.addEventListener('click', toggleModal) })
+
+      let selectStyle = document.querySelectorAll('.selectStyle')
+      let customWord = document.querySelectorAll('.customWord')
+      selectStyle.forEach(s => { s.addEventListener('change', function (event) {
+        console.dir(event.target.value)
+        if (event.target.value === 'Custom') {
+          console.log('true')
+          customWord.forEach(c => { c.classList.remove('is-hidden')})
+        } else {
+          customWord.forEach(c => { c.classList.add('is-hidden')})
+        }
+      })})
 
       function toggleShareModal (event) {
         var shareModal = document.getElementById('modal-share')
@@ -293,6 +385,6 @@
         }, function(response){});
       }
       </script>
-    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+    <script async defer src="http://assets.pinterest.com/js/pinit.js"></script>
   </body>
 </html>
