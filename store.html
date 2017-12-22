@@ -224,7 +224,45 @@
             <h4 class="title is-4">Awesome!</h4>
             <p>So excited you're excited about this product</p>
             <h6>Select your styles and quantity and you'll be redirected to PayPal to complete your purchase</h6>
-            <p>Need a custom word!? Different draw? <a href="mailto:theconsciousclimber@gmail.com?subject=Whoa%20I%20want%20one!">Email us</a> and we'll make it happen: </p>
+            <p>Need a custom word!? Different draw? <a href="#" class="toggleContactForm">Email us</a> and we'll make it happen: </p>
+            <div class="column is-12 is-hidden contact-form">
+              <form action="https://formspree.io/theconsciousclimber@gmail.com" method="POST">
+                <div class="field is-horizonta">
+                  <div class="field-body">
+                    <div class="field">
+                      <p class="control" style="margin-bottom: 0.5rem;">
+                        <input class="input" type="text" placeholder="Name" name="name">
+                      </p>
+                    </div>
+                    <div class="field">
+                      <p class="control">
+                        <input class="input" type="email" placeholder="Email" name="_replyto">
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="control is-horizontal">
+                  <div class="control">
+                    <textarea name="message" class="textarea" placeholder="Want one?!"></textarea>
+                  </div>
+                </div>
+                <input type="hidden" name="_next" value="/thanks.html" />
+                <input type="hidden" name="_subject" value="Whoa I want one!" />
+                <div class="columns">
+                  <div class="column is-three-quarter">
+                  </div>
+                  <div class="column is-one-quarter">
+                    <p class="control is-horizontal">
+                      <button type="submit" value="Send" style="margin-top: 0.5rem;" class="button is-fullwidth is-outlined is-medium">
+                        <span class="icon">
+                          <i class="fa fa-send"></i>
+                        </span>
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
             <br>
             <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
               <input type="hidden" name="cmd" value="_s-xclick">
@@ -291,7 +329,45 @@
             <h4 class="title is-4">Awesome!</h4>
             <p>So excited you're excited about this product</p>
             <h6>Select your styles and quantity and you'll be redirected to PayPal to complete your purchase</h6>
-            <p>Need a different draw? <a href="mailto:theconsciousclimber@gmail.com?subject=Whoa%20I%20want%20one!">Email us</a> and we'll make it happen: </p>
+            <p>Need a different draw? <a href="#" class="toggleContactForm">Email us</a> and we'll make it happen: </p>
+            <div class="column is-12 contact-form is-hidden" id="contactForm">
+              <form action="https://formspree.io/theconsciousclimber@gmail.com" method="POST">
+                <div class="field is-horizonta">
+                  <div class="field-body">
+                    <div class="field">
+                      <p class="control" style="margin-bottom: 0.5rem;">
+                        <input class="input" type="text" placeholder="Name" name="name">
+                      </p>
+                    </div>
+                    <div class="field">
+                      <p class="control">
+                        <input class="input" type="email" placeholder="Email" name="_replyto">
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="control is-horizontal">
+                  <div class="control">
+                    <textarea name="message" class="textarea" placeholder="Want one?!"></textarea>
+                  </div>
+                </div>
+                <input type="hidden" name="_next" value="/thanks.html" />
+                <input type="hidden" name="_subject" value="Whoa I want one!" />
+                <div class="columns">
+                  <div class="column is-three-quarter">
+                  </div>
+                  <div class="column is-one-quarter">
+                    <p class="control is-horizontal">
+                      <button type="submit" value="Send" style="margin-top: 0.5rem;" class="button is-fullwidth is-outlined is-medium">
+                        <span class="icon">
+                          <i class="fa fa-send"></i>
+                        </span>
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
             <br>
               <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_s-xclick">
@@ -313,18 +389,16 @@
                       </div>
                     </div>
                     <div class="field">
-                      <div class="field">
-                        <div class="control">
-                          <input type="hidden" name="on0" value="Quantity">
-                          <label class="label">Quantity</label>
-                          <div class="select">
-                            <select name="os0">
-                              <option value="1x">1x $30.00 CAD</option>
-                              <option value="2x">2x $55.00 CAD</option>
-                              <option value="4x">4x $100.00 CAD</option>
-                              <option value="8x">8x $190.00 CAD</option>
-                            </select>
-                          </div>
+                      <div class="control">
+                        <input type="hidden" name="on0" value="Quantity">
+                        <label class="label">Quantity</label>
+                        <div class="select">
+                          <select name="os0">
+                            <option value="1x">1x $30.00 CAD</option>
+                            <option value="2x">2x $55.00 CAD</option>
+                            <option value="4x">4x $100.00 CAD</option>
+                            <option value="8x">8x $190.00 CAD</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -390,20 +464,34 @@
       </div>
     </section>
     <script type="text/javascript">
+
+      let contactButtons = document.querySelectorAll('.toggleContactForm')
+      let contactForms = document.querySelectorAll('.contact-form')
+      let orderButtons = document.querySelectorAll('.orderButton')
+      let closeModal = document.querySelectorAll('.modalClose')
+      let selectStyle = document.querySelectorAll('.selectStyle')
+      let customWord = document.querySelectorAll('.customWord')
+      let shareButtons = document.querySelectorAll('.shareButton')
+      let closeShareModal = document.querySelectorAll('.shareModalClose')
+
       function toggleModal (event) {
         var modal = document.getElementById('modal' + event.target.dataset.draw)
         modal.classList.toggle('is-active')
         var styleList = document.getElementById('selectStyle')
         let targetStyle = event.target.dataset.style
         styleList.value = targetStyle
+        contactForms.forEach(cf => cf.classList.add('is-hidden'))
       }
-      let orderButtons = document.querySelectorAll('.orderButton')
-      orderButtons.forEach(b => { b.addEventListener('click', toggleModal) })
-      let closeModal = document.querySelectorAll('.modalClose')
-      closeModal.forEach(c => { c.addEventListener('click', toggleModal) })
 
-      let selectStyle = document.querySelectorAll('.selectStyle')
-      let customWord = document.querySelectorAll('.customWord')
+      function toggleShareModal (event) {
+        var shareModal = document.getElementById('modal-share')
+        shareModal.classList.toggle('is-active')
+      }
+
+      function toggleContactForm (event) { contactForms.forEach(cf => cf.classList.toggle('is-hidden')) }
+
+      orderButtons.forEach(b => { b.addEventListener('click', toggleModal) })
+      closeModal.forEach(c => { c.addEventListener('click', toggleModal) })
       selectStyle.forEach(s => { s.addEventListener('change', function (event) {
         if (event.target.value === 'Custom') {
           customWord.forEach(c => { c.classList.remove('is-hidden')})
@@ -412,14 +500,9 @@
         }
       })})
 
-      function toggleShareModal (event) {
-        var shareModal = document.getElementById('modal-share')
-        shareModal.classList.toggle('is-active')
-      }
-      let shareButtons = document.querySelectorAll('.shareButton')
       shareButtons.forEach(b => { b.addEventListener('click', toggleShareModal) })
-      let closeShareModal = document.querySelectorAll('.shareModalClose')
       closeShareModal.forEach(c => { c.addEventListener('click', toggleShareModal) })
+      contactButtons.forEach(cb => { cb.addEventListener('click', toggleContactForm) })
     </script>
     <script>
       document.getElementById('fbShare').onclick = function() {
